@@ -1,0 +1,23 @@
+title:
+id: 
+status: 
+description: 
+references:
+  - 
+author: 
+date: 
+modified: 
+tags:
+  - 
+logsource:
+  product: 
+    service: 
+detection:
+    selection:
+      
+      displaymessage:
+    keywords:
+    condition: [selection | keywords]
+falsepositives:
+    - 
+level: 
