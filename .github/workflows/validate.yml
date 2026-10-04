@@ -28,3 +28,7 @@ jobs:
         run: |
           sigma check detections/sigma/linux/
           sigma check detections/sigma/windows/
+      
+      - name: Lint Python
+        run: |
+          ruff check scripts/
