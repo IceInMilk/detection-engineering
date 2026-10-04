@@ -1,5 +1,6 @@
+# https://sigmahq.io/docs/basics/rules.html#components
 title:
-id: 
+id: # recommended -> https://www.uuidgenerator.net/version4
 status: 
 description: 
 references:
@@ -8,16 +9,17 @@ author:
 date: 
 modified: 
 tags:
-  - 
 logsource:
   product: 
     service: 
 detection:
-    selection:
-      
-      displaymessage:
+  selection:
+    field_name: this0
+    other_field_name: this1
     keywords:
-    condition: [selection | keywords]
+      - "whoami"
+    Username: "Administrator" # field value search
+  condition: [selection | keywords]
 falsepositives:
-    - 
+  - 
 level: 

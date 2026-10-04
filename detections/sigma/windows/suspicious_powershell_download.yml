@@ -1,0 +1,33 @@
+title: Suspicious Powershell Download
+id: 8c2f3d4a-8c4d-4e0d-9f22-123456789abc
+status: experimental
+description: Detects Powershell commands commonly associated with downloading remote content.
+references:
+  - https://attack.mitre.org/techniques/T1059/001/
+author: IceInMilk
+data: 2026-10-04
+tags:
+  - attack.execution
+  - attack.t1059.001
+
+logsource:
+  category: process_creation
+  product: windows
+
+detection:
+  selection:
+    Image|endswith:
+      - '\powershell.exe'
+      - 'pwsh.exe'
+    CommandLine|contains:
+      - 'Invoke-WebRequest'
+      - 'DownloadString'
+      - 'Net.WebClient'
+      - 'curl'
+  condition: selection
+
+falsepositives:
+  - Adminstrative Scripts
+  - Software installation Scripts
+
+level: medium

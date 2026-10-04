@@ -1,0 +1,31 @@
+title: Curl Download Piped to Shell
+id: 1c2f3d4a-8c4d-4e0d-9f22-123456789abc
+status: experimental
+description: Detects curl output being piped directly into a shell.
+author: IceInMilk
+date: 2026-10-04
+tags:
+    - attack.execution
+    - attack.t1059
+
+logsource:
+  category: process_creation
+  product: linux
+
+detection:
+    selection:
+        CommandLine|contains:
+            - 'curl'
+    pipe:
+        CommandLine|contains:
+            - '| sh'
+            - '| bash'
+            - '| zsh'
+    condition: selection and pipe
+
+falsepositives:
+    - Installation scripts
+    - Administrative activity
+
+level: high
+

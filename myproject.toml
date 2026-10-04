@@ -1,0 +1,15 @@
+[project]
+name = "detection-engineering"
+version = "0.1.0"
+description = "Detection engineering rules, tests, and CI/CD pipelines"
+requires-python = ">=3.11"
+
+dependencies = [
+    "sigma-cli"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff"
+]
