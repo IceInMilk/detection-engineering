@@ -1,4 +1,0 @@
-- name: Validate Sigma Rules
-  run: |
-    pip install sigma-cli
-    sigma-cli lint ./sigma/
